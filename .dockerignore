@@ -1,0 +1,9 @@
+.vscode
+.flaskenv
+.gitignore
+*.MD
+
+logs
+
+poetry.lock
+pyproject.toml
