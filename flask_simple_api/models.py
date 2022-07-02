@@ -10,8 +10,14 @@ class Celebrity(db.Model):
     name = db.Column(db.String(80), unique=True, nullable=False)
     quotes = db.relationship("Quote", backref="celebrity", lazy=True)
 
+    def __str__(self) -> str:
+        return self.name
+
 
 class Quote(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(80), unique=True, nullable=False)
     celebrity_id = db.Column(db.Integer, db.ForeignKey("celebrity.id"), nullable=False)
+
+    def __str__(self) -> str:
+        return self.text
