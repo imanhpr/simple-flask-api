@@ -10,6 +10,9 @@ class Celebrity(db.Model):
     name = db.Column(db.String(80), unique=True, nullable=False)
     quotes = db.relationship("Quote", backref="celebrity", lazy=True)
 
+    def dict(self):
+        return {"id": self.id, "name": self.name}
+
     def __str__(self) -> str:
         return self.name
 
@@ -20,5 +23,7 @@ class Quote(db.Model):
     translate = db.Column(db.Text, nullable=False)
     celebrity_id = db.Column(db.Integer, db.ForeignKey("celebrity.id"), nullable=False)
 
+    def dict(self):
+        return {"id": self.id, "text": self.name , 'translate':self.translate}
     def __str__(self) -> str:
         return self.text
