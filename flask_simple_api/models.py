@@ -16,7 +16,8 @@ class Celebrity(db.Model):
 
 class Quote(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    text = db.Column(db.String(80), unique=True, nullable=False)
+    text = db.Column(db.Text, nullable=False)
+    translate = db.Column(db.Text, nullable=False)
     celebrity_id = db.Column(db.Integer, db.ForeignKey("celebrity.id"), nullable=False)
 
     def __str__(self) -> str:
