@@ -1,6 +1,10 @@
 from flask_restful import fields
 
-_quote_fields = {"id": fields.Integer, "text": fields.String}
+_quote_fields = {
+    "id": fields.Integer,
+    "text": fields.String,
+    "translate": fields.String,
+}
 
 _celebrity_fields = {
     "id": fields.Integer,
