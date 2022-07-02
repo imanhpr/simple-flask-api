@@ -9,6 +9,7 @@ services:
       - .:/flask_app
     depends_on:
       - postgres_db
+      - redis-server
 
   postgres_db:
     image: postgres
@@ -16,3 +17,6 @@ services:
     environment:
       - POSTGRES_PASSWORD=testpass
       - POSTGRES_DB=api_db
+
+  redis-server:
+    image: redis:7.0.2-alpine
