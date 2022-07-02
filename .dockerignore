@@ -1,6 +1,7 @@
 .vscode
 .flaskenv
 .gitignore
+*.db
 *.MD
 
 logs

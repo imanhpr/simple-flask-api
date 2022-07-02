@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+  flask-server:
+    image: flask-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/flask_app
+    depends_on:
+      - postgres_db
+
+  postgres_db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=testpass
+      - POSTGRES_DB=api_db
